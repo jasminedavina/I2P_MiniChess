@@ -1,6 +1,8 @@
 #include <cstdlib>
 #include "../state/state.hpp"
 #include "./submission.hpp"
+#include <iostream>
+
 
 /**
  * @brief get a legal action by alpha-beta
@@ -12,6 +14,7 @@
 
 int minValue = -1000000;
 int maxValue = 1000000;
+
 
 Move Submission::get_move(State* state, int depth) {
   if (!state->legal_actions.size())
@@ -45,11 +48,12 @@ Move Submission::get_move(State* state, int depth) {
   return FinalMove;
 }
 
+
 int Submission::algo(State* state, int depth, int alpha, int beta, bool maxPlay) {
   int score, FinalScore;
-  if(!state->legal_actions.size()){
-      state->get_legal_actions();
-  }
+  // if(!state->legal_actions.size()){
+  //     state->get_legal_actions();
+  // }
   if (depth == 0 || state->legal_actions.empty()) {
     return state->evaluate();
   }

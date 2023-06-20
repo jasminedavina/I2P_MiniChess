@@ -11,6 +11,7 @@
  * 
  * @return int 
  */
+
 int State::evaluate(){
   static const int material_table[7] = {0, 2, 6, 7, 8, 20, 100};
   int whitePieces = 0;

@@ -11,8 +11,8 @@
  * @return Move 
  */
 
-int minValue = -1000000;
-int maxValue = 1000000;
+int min = -1000000;
+int max = 1000000;
 
 Move Minimax::get_move(State* state, int depth) {
   if (!state->legal_actions.size())
@@ -22,15 +22,15 @@ Move Minimax::get_move(State* state, int depth) {
   Move bestMove;
 
   if(state->player == 0){
-    bestScore = minValue;
+    bestScore = min;
   }
   else if(state->player == 1){
-    bestScore = maxValue;
+    bestScore = max;
   }
 
   for (auto action : state->legal_actions) {
     State* nextState = state->next_state(action);
-    int score = minimax(nextState, depth - 1, minValue, maxValue, state->player );
+    int score = minimax(nextState, depth - 1, min, max, state->player );
     delete nextState;
 
     if(state->player == 0 && score > bestScore){
@@ -55,7 +55,7 @@ int Minimax::minimax(State* state, int depth, int alpha, int beta, bool maximizi
   }
 
   if (maximizingPlayer) {
-    int maxScore = minValue;
+    int maxScore = min;
     for (auto action : state->legal_actions) {
       State* nextState = state->next_state(action);
       int score = minimax(nextState, depth - 1, alpha, beta, false);
@@ -70,7 +70,7 @@ int Minimax::minimax(State* state, int depth, int alpha, int beta, bool maximizi
     }
     return maxScore;
   } else {
-    int minScore = maxValue;
+    int minScore = max;
     for (const auto& action : state->legal_actions) {
       State* nextState = state->next_state(action);
       int score = minimax(nextState, depth - 1, alpha, beta, true);
