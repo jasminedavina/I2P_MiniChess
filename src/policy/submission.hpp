@@ -9,5 +9,5 @@
 class Submission{
 public:
   static Move get_move(State *state, int depth);
-  static int algo(State *state, int depth, int alpha, int beta, bool maximizingPlayer);
+  static int algo(State *state, int depth, int alpha, int beta, bool maxPlay);
 };
