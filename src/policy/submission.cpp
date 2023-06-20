@@ -51,9 +51,7 @@ Move Submission::get_move(State* state, int depth) {
 
 int Submission::algo(State* state, int depth, int alpha, int beta, bool maxPlay) {
   int score, FinalScore;
-  // if(!state->legal_actions.size()){
-  //     state->get_legal_actions();
-  // }
+  
   if (depth == 0 || state->legal_actions.empty()) {
     return state->evaluate();
   }
