@@ -2,7 +2,6 @@
 #include "../state/state.hpp"
 #include "./submission.hpp"
 
-
 /**
  * @brief get a legal action by alpha-beta
  * 
@@ -42,7 +41,7 @@ Move Submission::get_move(State* state, int depth) {
       FinalMove = action;
     }
   }
-
+  
   return FinalMove;
 }
 

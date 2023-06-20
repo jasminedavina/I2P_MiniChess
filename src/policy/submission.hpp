@@ -1,9 +1,8 @@
 #pragma once
 #include "../state/state.hpp"
 
-
 /**
- * @brief Policy class for random policy, 
+ * @brief Policy class for alpha-beta policy, 
  * your policy class should have get_move method
  */
 class Submission{

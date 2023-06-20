@@ -13,6 +13,7 @@ State* root;
  * 
  * @param fin 
  */
+
 void read_board(std::ifstream& fin) {
   Board board;
   int player;
@@ -32,12 +33,12 @@ void read_board(std::ifstream& fin) {
   root->get_legal_actions();
 }
 
-
 /**
  * @brief 
  * 
  * @param fout 
  */
+
 void write_valid_spot(std::ofstream& fout) {
   
   while(true) {
@@ -50,13 +51,13 @@ void write_valid_spot(std::ofstream& fout) {
   }
 }
 
-
 /**
  * @brief Main function for player
  * 
  * @param argv 
  * @return int 
  */
+
 int main(int, char** argv) {
   //srand(RANDOM_SEED);
   std::ifstream fin(argv[1]);
