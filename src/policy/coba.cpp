@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include "../state/state.hpp"
-#include "./minimax.hpp"
+#include "./coba.hpp"
 
 
 /**
